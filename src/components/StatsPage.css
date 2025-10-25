@@ -1,0 +1,123 @@
+.stats-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.stats-header {
+  background: linear-gradient(135deg, #003366, #ff6600);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.stats-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.stats-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.stats-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.batting-stats, .bowling-stats, .team-stats {
+  margin-bottom: 50px;
+}
+
+.batting-stats h2, .bowling-stats h2, .team-stats h2 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.stats-table {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  background: #003366;
+  color: white;
+  padding: 15px 20px;
+  font-weight: 600;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s;
+}
+
+.table-row:hover {
+  background: #f8f9fa;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.record-item {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-left: 4px solid #ff6600;
+  text-align: center;
+}
+
+.record-item h3 {
+  color: #003366;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.record-item p {
+  color: #333;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .stats-header h1 {
+    font-size: 2rem;
+  }
+  
+  .table-header, .table-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .table-header span, .table-row span {
+    padding: 5px 0;
+  }
+  
+  .table-header {
+    display: none;
+  }
+  
+  .table-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
