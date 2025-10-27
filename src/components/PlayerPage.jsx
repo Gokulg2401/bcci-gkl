@@ -55,9 +55,9 @@ const PlayerPage = () => {
       role: 'All-rounder',
       age: 31,
       formats: {
-        ODI: { matches: 91, runs: 1769, avg: 34.00, wickets: 79, bowlAvg: 42.27 },
-        Test: { matches: 11, runs: 532, avg: 31.29, wickets: 17, bowlAvg: 30.47 },
-        T20I: { matches: 104, runs: 1551, avg: 27.52, wickets: 79, bowlAvg: 27.65 }
+        ODI: { matches: 91, runs: 1769, avg: 34.00, centuries: 1, fifties: 8, wickets: 79, bowlAvg: 42.27 },
+        Test: { matches: 11, runs: 532, avg: 31.29, centuries: 1, fifties: 1, wickets: 17, bowlAvg: 30.47 },
+        T20I: { matches: 104, runs: 1551, avg: 27.52, centuries: 0, fifties: 8, wickets: 79, bowlAvg: 27.65 }
       }
     },
     'Jasprit Bumrah': {
@@ -95,9 +95,9 @@ const PlayerPage = () => {
       role: 'All-rounder',
       age: 36,
       formats: {
-        ODI: { matches: 197, runs: 2756, avg: 32.13, wickets: 220, bowlAvg: 36.46 },
-        Test: { matches: 73, runs: 3200, avg: 35.26, wickets: 294, bowlAvg: 24.63 },
-        T20I: { matches: 74, runs: 515, avg: 29.41, wickets: 54, bowlAvg: 29.85 }
+        ODI: { matches: 197, runs: 2756, avg: 32.13, centuries: 1, fifties: 13, wickets: 220, bowlAvg: 36.46 },
+        Test: { matches: 73, runs: 3200, avg: 35.26, centuries: 1, fifties: 17, wickets: 294, bowlAvg: 24.63 },
+        T20I: { matches: 74, runs: 515, avg: 29.41, centuries: 0, fifties: 1, wickets: 54, bowlAvg: 29.85 }
       }
     },
     'Kuldeep Yadav': {
@@ -152,9 +152,9 @@ const PlayerPage = () => {
       role: 'All-rounder',
       age: 31,
       formats: {
-        ODI: { matches: 9, runs: 38, avg: 12.67, wickets: 11, bowlAvg: 33.45 },
-        Test: { matches: 11, runs: 447, avg: 31.93, wickets: 43, bowlAvg: 15.79 },
-        T20I: { matches: 54, runs: 134, avg: 16.75, wickets: 61, bowlAvg: 20.95 }
+        ODI: { matches: 9, runs: 38, avg: 12.67, centuries: 0, fifties: 0, wickets: 11, bowlAvg: 33.45 },
+        Test: { matches: 11, runs: 447, avg: 31.93, centuries: 0, fifties: 3, wickets: 43, bowlAvg: 15.79 },
+        T20I: { matches: 54, runs: 134, avg: 16.75, centuries: 0, fifties: 0, wickets: 61, bowlAvg: 20.95 }
       }
     },
     'Arshdeep Singh': {
@@ -190,9 +190,9 @@ const PlayerPage = () => {
       role: 'All-rounder',
       age: 38,
       formats: {
-        ODI: { matches: 116, runs: 707, avg: 16.44, wickets: 156, bowlAvg: 33.20 },
-        Test: { matches: 100, runs: 3309, avg: 25.69, wickets: 516, bowlAvg: 24.00 },
-        T20I: { matches: 65, runs: 184, avg: 12.27, wickets: 72, bowlAvg: 23.22 }
+        ODI: { matches: 116, runs: 707, avg: 16.44, centuries: 0, fifties: 2, wickets: 156, bowlAvg: 33.20 },
+        Test: { matches: 100, runs: 3309, avg: 25.69, centuries: 1, fifties: 14, wickets: 516, bowlAvg: 24.00 },
+        T20I: { matches: 65, runs: 184, avg: 12.27, centuries: 0, fifties: 0, wickets: 72, bowlAvg: 23.22 }
       }
     },
     'Umesh Yadav': {
@@ -269,14 +269,18 @@ const PlayerPage = () => {
                       <span className="stat-label">Bowl Avg</span>
                       <span className="stat-value">{stats.bowlAvg || stats.avg}</span>
                     </div>
-                    <div className="stat-item">
-                      <span className="stat-label">Economy</span>
-                      <span className="stat-value">{stats.economy}</span>
-                    </div>
-                    <div className="stat-item">
-                      <span className="stat-label">Best Figures</span>
-                      <span className="stat-value">{stats.bestFig}</span>
-                    </div>
+                    {stats.economy && (
+                      <div className="stat-item">
+                        <span className="stat-label">Economy</span>
+                        <span className="stat-value">{stats.economy}</span>
+                      </div>
+                    )}
+                    {stats.bestFig && (
+                      <div className="stat-item">
+                        <span className="stat-label">Best Figures</span>
+                        <span className="stat-value">{stats.bestFig}</span>
+                      </div>
+                    )}
                   </>
                 )}
               </div>
