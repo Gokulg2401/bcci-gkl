@@ -23,8 +23,8 @@
   color: white;
   padding: 60px 20px;
   text-align: center;
-  margin: 40px;
-  border-radius: 25px;
+  margin: 0 40px 40px 40px;
+  border-radius: 0 0 25px 25px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1;
