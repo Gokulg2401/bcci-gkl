@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './PlayerPage.css';
 
 const PlayerPage = () => {
   const location = useLocation();
   const playerName = decodeURIComponent(location.pathname.split('/')[2]).replace(/&#39;/g, "'");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [playerName]);
 
   const playerData = {
     'Shubman Gill': {

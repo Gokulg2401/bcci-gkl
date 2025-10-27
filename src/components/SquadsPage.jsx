@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './SquadsPage.css';
 
 const SquadsPage = () => {
   const [activeFormat, setActiveFormat] = useState('odi');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeFormat]);
 
   const squads = {
     odi: {
