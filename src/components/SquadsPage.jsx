@@ -4,14 +4,22 @@ import './SquadsPage.css';
 
 const SquadsPage = () => {
   const [activeFormat, setActiveFormat] = useState('odi');
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [activeFormat]);
+  const handleFormatChange = (format) => {
+    if (format === activeFormat) return;
+    
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setActiveFormat(format);
+      setIsTransitioning(false);
+      window.scrollTo(0, 0);
+    }, 150);
+  };
 
   const squads = {
     odi: {
@@ -81,25 +89,25 @@ const SquadsPage = () => {
         <div className="format-tabs">
           <button 
             className={activeFormat === 'odi' ? 'active' : ''} 
-            onClick={() => setActiveFormat('odi')}
+            onClick={() => handleFormatChange('odi')}
           >
             ODI Squad
           </button>
           <button 
             className={activeFormat === 't20i' ? 'active' : ''} 
-            onClick={() => setActiveFormat('t20i')}
+            onClick={() => handleFormatChange('t20i')}
           >
             T20I Squad
           </button>
           <button 
             className={activeFormat === 'test' ? 'active' : ''} 
-            onClick={() => setActiveFormat('test')}
+            onClick={() => handleFormatChange('test')}
           >
             Test Squad
           </button>
         </div>
 
-        <div className="squad-info">
+        <div className={`squad-info ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
           <div className="leadership-info">
             <div className="leader">
               <h3>Captain</h3>

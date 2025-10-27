@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './TrophyPage.css';
 
 const TrophyPage = () => {
   const location = useLocation();
   const trophyId = location.pathname.split('/')[2];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [trophyId]);
 
   const trophyData = {
     't20-2007': {

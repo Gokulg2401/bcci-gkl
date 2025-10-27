@@ -27,6 +27,19 @@
   padding: 40px 20px;
 }
 
+.squad-info {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.squad-info.fade-out {
+  opacity: 0;
+}
+
+.squad-info.fade-in {
+  opacity: 1;
+}
+
 .format-tabs {
   display: flex;
   justify-content: center;
@@ -61,6 +74,18 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
   margin-bottom: 40px;
+  animation: slideInUp 0.4s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .leader {
@@ -88,6 +113,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
+  animation: slideInUp 0.5s ease-out;
 }
 
 .player-card {
