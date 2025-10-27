@@ -105,7 +105,7 @@ const SquadsPage = () => {
 
           <div className="players-grid">
             {currentSquad.players.map((player, index) => (
-              <Link key={index} to={`/player/${encodeURIComponent(player.name)}`} className="player-card">
+              <Link key={index} to={`/player/${encodeURIComponent(player.name.replace(/'/g, "'"))}`} className="player-card">
                 <div className="player-info">
                   <h4>{player.name}</h4>
                   <p className="role">{player.role}</p>
